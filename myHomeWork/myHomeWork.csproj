@@ -282,6 +282,7 @@
     <Content Include="Views\Acticle\Index.cshtml" />
     <Content Include="Views\Acticle\Create.cshtml" />
     <Content Include="Views\Reply\Index.cshtml" />
+    <Content Include="Views\Acticle\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
