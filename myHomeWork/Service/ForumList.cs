@@ -51,7 +51,7 @@ namespace myHomeWork.Service
         public List<ARTICLEREPLY> GetRData(string A_ID, string F_ID)
         {
             var R = db.Database.SqlQuery<ARTICLEREPLY>("select * from ARTICLE WHERE FORUM_ID=@FORUM_ID", new SqlParameter("@FORUM_ID", F_ID)).AsQueryable(); 
-            return R.ToList();
+            return R.ToList(); 
         }
 
         public void ADBCreate(string a_title, string a_body, string a_author, string f_id) 
