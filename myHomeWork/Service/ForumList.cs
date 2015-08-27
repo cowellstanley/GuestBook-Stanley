@@ -50,7 +50,7 @@ namespace myHomeWork.Service
 
         public List<ARTICLEREPLY> GetRData(string A_ID, string F_ID)
         {
-            var R = db.Database.SqlQuery<ARTICLEREPLY>("select * from ARTICLE WHERE FORUM_ID=@FORUM_ID", new SqlParameter("@FORUM_ID", F_ID)).AsQueryable();
+            var R = db.Database.SqlQuery<ARTICLEREPLY>("select * from ARTICLE WHERE FORUM_ID=@FORUM_ID", new SqlParameter("@FORUM_ID", F_ID)).AsQueryable(); 
             return R.ToList();
         }
 
