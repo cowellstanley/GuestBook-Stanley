@@ -54,7 +54,7 @@ namespace myHomeWork.Service
             return R.ToList();
         }
 
-        public void ADBCreate(string a_title, string a_body, string a_author, string f_id)
+        public void ADBCreate(string a_title, string a_body, string a_author, string f_id) 
         {
             
             ARTICLE newdata = new ARTICLE();
