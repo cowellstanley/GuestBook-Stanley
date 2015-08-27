@@ -66,7 +66,7 @@ namespace myHomeWork.Service
            
             newdata.FORUM_ID = int.Parse(f_id);
             newdata.BUD_DTM = DateTime.Now;
-            newdata.UPD_DTM = DateTime.Now;
+            newdata.UPD_DTM = DateTime.Now; 
             
             db.ARTICLE.Add(newdata);
             db.SaveChanges();
