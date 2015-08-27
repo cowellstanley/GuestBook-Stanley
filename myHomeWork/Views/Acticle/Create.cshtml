@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "新增文章";
+}
+
+<h2>新增文章</h2>
+
+@using (Html.BeginForm("Create","Acticle"))
+{
+    <div>
+        @Html.Label("標題：")
+        @Html.TextBox("a_title")
+        <br />
+        @Html.Label("內容：")
+        @Html.TextArea("a_body")
+        <br />
+        @Html.Label("作者：")
+        @Html.TextBox("a_author")
+        <br />
+        @Html.Hidden("F_ID",Request["F_ID"])
+        <input type="submit" value="送出">
+    </div>
+}

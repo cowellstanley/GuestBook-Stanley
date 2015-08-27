@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "新增論壇區";
+}
+
+<h2>新增論壇區</h2>
+
+@using (Html.BeginForm("Create", "Forum")) 
+{
+    <div>
+        @Html.Label("討論區名稱：")
+        @Html.TextBox("f_title")
+        <br/>
+        <input type="submit" value="送出">
+    </div>
+}

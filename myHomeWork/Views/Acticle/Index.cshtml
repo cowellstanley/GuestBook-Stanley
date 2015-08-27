@@ -1,0 +1,42 @@
+﻿
+
+@{
+    ViewBag.Title = "文章列表";
+}
+
+<h2>文章列表</h2>
+
+<div>
+    @if (Model != null)
+    {
+        <table border="1" style="width:100%">
+            <tr style="text-align:center">
+                <td style="width:20%">標題</td>
+                <td>內容</td>
+                <td style="width:10%">作者</td>
+                <td style="width:15%">建立時間</td>
+                <td style="width:15%">最後一次回應時間</td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr onclick="go_Reply('@item.ID','@Request["F_ID"]')">                        
+                    <td>@item.TITLE</td>                        
+                    <td>@item.BODY</td>                        
+                    <td>@item.AUTHOR</td>                        
+                    <td>@item.BUD_DTM</td>                        
+                    <td>@item.UPD_DTM</td>
+                </tr>
+            }
+        </table>
+    }
+    @Html.Hidden("F_ID", Request["F_ID"])
+</div>
+<br />
+<div>
+    <a onclick="go_Reply('@Request["F_ID"]');">新增文章</a>
+</div>
+<script type="text/javascript">
+    function go_Reply(str1,str2) {
+        location.href = "/Reply/Index?F_ID=" + str1 + "&A_ID=" + str2;
+    }
+</script>

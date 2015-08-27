@@ -1,0 +1,37 @@
+﻿@Model IEnumberable<myhomework.models.forum>
+    @{
+        ViewBag.Title = "討論區列表";
+    }
+
+    <h2>討論區列表</h2>
+
+    <div>
+        @if (Model != null)
+        {
+            <table border="1" style="width:60%">
+                <tr>
+                    <td style="width:10%">序號</td>
+                    <td>名稱</td>
+                    <td style="width:25%">時間</td>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td><a onclick="go_Acticle('@item.ID');">@item.TITLE</a></td>
+                        <td>@item.BUD_DTM</td>
+                    </tr>   
+                    
+                }
+            </table>
+        }
+    </div>
+                       <br />
+    <div>
+        @Html.ActionLink("新增討論區","Create")
+    </div>
+<script type="text/javascript">
+    function go_Acticle(str) {
+        location.href = "/Acticle/Index?F_ID=" + str;
+    }
+</script>
